@@ -5,17 +5,20 @@ function Chat()
 	this.messages = [];
 	this.chatAvatar = '';
 }
+
 function Person(_name, _avatar)
 {
 	this.name = _name;
 	this.avatar = _avatar;
 }
+
 function Message(_message, _sender)
 {
 	this.message = _message;
 	this.sender = _sender;
 	this.received = false;
 }
+
 function Whatsapp()
 {
 	this.chats = [];
