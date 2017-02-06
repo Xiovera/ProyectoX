@@ -3,6 +3,8 @@
 
 
 // parte visual
+var liListItem = null;
+
 function onMensajeKey(evt) //puede ser evt o event del evento
 {
 	if (evt.keyCode == 13)
@@ -31,8 +33,12 @@ function crearMensaje(_mensaje)
 		'</div>' +
 	'</div>';
 
-	var elementoConversacion = document.getElementById("conversacion");
-	elementoConversacion.innerHTML += htmlMensajeOut
+	var mensaje = liListItem.getElementByClassName("w-last-message")[0];
+	mensaje.innerHTML = _mensaje;
+
+	var elementoChat = document.getElementById("chat");
+	elementoChat.innerHTML += htmlMensajeOut;
+	elementoChat.scrollTop = elementoChat.scrollHeight;
 }
 
 
@@ -45,15 +51,15 @@ function crearListaChats()
 function crearChat()
 {
 	var elementoListaChats = document.getElementById("lista-chats");
-	var 
-	<li>
-		<div class="avatar">
-			<img src="image/logocodeacademy.png" alt="" class="wh-44">
-			<h4 class="w-contact-name">Laboratoria Perú</h4>
-			<p class="w-last-message" id="mensaje">No se pique!!</p>
-		</div>
-	<div class="time" id="hora">14:27</div>
-	</li>
+	var liListaChats = document.createElement("LI");
+	var chatModelo = '<div class="avatar">' +
+			'<img src="image/logocodeacademy.png" alt="" class="wh-44">' +
+			'<h4 class="w-contact-name">Laboratoria Perú</h4>' +
+			'<p class="w-last-message" id="mensaje">No se pique!!</p>' +
+		'</div>' + 
+	'<div class="time" id="hora">14:27</div>';
+	
+	//para poner el scroll en position top 
 }
 
 
