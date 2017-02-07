@@ -38,7 +38,7 @@ function crearMensaje(_mensaje)
 
 	var elementoChat = document.getElementById("chat");
 	elementoChat.innerHTML += htmlMensajeOut;
-	elementoChat.scrollTop = elementoChat.scrollHeight;
+	elementoChat.scrollTop = elementoChat.scrollHeight;//para poner el scroll en position top 
 }
 
 
@@ -48,18 +48,24 @@ function crearListaChats()
 
 }
 
-function crearChat()
+function crearChat(_mensaje)
 {
 	var elementoListaChats = document.getElementById("lista-chats");
-	var liListaChats = document.createElement("LI");
-	var chatModelo = '<div class="avatar">' +
+	
+	if (liListItem == null)
+	{
+		liListItem = document.createElement("LI");
+		var htmlChatItem = '<div class="avatar">' +
 			'<img src="image/logocodeacademy.png" alt="" class="wh-44">' +
 			'<h4 class="w-contact-name">Laboratoria Perú</h4>' +
-			'<p class="w-last-message" id="mensaje">No se pique!!</p>' +
+			'<p class="w-last-message" id="mensaje">'+ _mensaje +'</p>' +
 		'</div>' + 
 	'<div class="time" id="hora">14:27</div>';
-	
-	//para poner el scroll en position top 
+
+	liListItem.innerHTML = htmlChatItem;
+	elementoListaChats.insertBefore(liListItem,elementoListaChats.childNodes[0]);	
+	}
+	//elementoListaChats.innerHTML += htmlChatItem;
 }
 
 
